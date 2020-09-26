@@ -1,0 +1,34 @@
+import java.util.Scanner;
+import java.util.Arrays;
+public class Palindrome
+{
+	public static void main(String[] args)
+	{
+		String palindrome;
+		String oldPalindrome; //So we can display the palindrome with spaces at the end
+		
+		if(args.length > 0)
+		{
+			oldPalindrome = Arrays.toString(args).replace("[", "").replace(",", "").replace("]", "").toLowerCase();
+			palindrome = Arrays.toString(args).replace("[", "").replace(",", "").replaceAll("\\W", "").replace("]", "").toLowerCase();
+			if(palindrome.equals(new StringBuilder(palindrome).reverse().toString().replaceAll("\\W", "").toLowerCase()))
+				System.out.println(oldPalindrome +" is a palindrome");
+			else
+				System.out.println(oldPalindrome +" is not a palindrome");
+		}
+		else
+		{
+			System.out.println("Welcome to Palindrome");
+			System.out.print("Enter your potential palindrome: ");
+			Scanner input = new Scanner(System.in);
+			palindrome = input.nextLine();
+			input.close();
+			oldPalindrome = palindrome; 
+			palindrome = palindrome.replaceAll("\\W", "").toLowerCase();
+			if(palindrome.equals(new StringBuilder(palindrome).reverse().toString().replaceAll("\\W", "").toLowerCase()))
+				System.out.println(oldPalindrome +" is a palindrome");
+			else
+				System.out.println(oldPalindrome +" is not a palindrome");
+		}	
+	}
+}
