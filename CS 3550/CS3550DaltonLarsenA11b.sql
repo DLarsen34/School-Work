@@ -1,0 +1,104 @@
+--1. Display the territory (ID, Name, CountryRegionCode, Group and Number of Customers) 
+--of the territory that has the most customers. 
+
+--SELECT sc.TerritoryID, sst.[Name], sst.CountryRegionCode, sst.[Group], COUNT(*) AS Num_Customers
+--FROM Sales.Customer sc
+--INNER JOIN Sales.SalesTerritory sst
+--ON sst.TerritoryID = sc.TerritoryID
+--GROUP BY sc.TerritoryID, sst.[name], sst.CountryRegionCode, sst.[Group]
+--HAVING COUNT(*) IN
+--(SELECT MAX(t1.Num_Customers)
+--FROM
+--(SELECT sc.TerritoryID, sst.[Name], sst.CountryRegionCode, sst.[Group], COUNT(*) AS Num_Customers
+--FROM Sales.Customer sc
+--INNER JOIN Sales.SalesTerritory sst
+--ON sst.TerritoryID = sc.TerritoryID
+--GROUP BY sc.TerritoryID, sst.[name], sst.CountryRegionCode, sst.[Group]) t1);
+
+--2. List the first employee (still with the company) hired in each department, in alphabetical order by department. 
+--The employee must still be in the department.
+
+--SELECT pp.FirstName, pp.LastName, hrd.[Name]
+--FROM Person.Person pp
+--INNER JOIN HumanResources.Employee hre
+--ON hre.BusinessEntityID = pp.BusinessEntityID
+--INNER JOIN HumanResources.EmployeeDepartmentHistory hredh
+--ON hredh.BusinessEntityID = hre.BusinessEntityID
+--INNER JOIN HumanResources.Department hrd
+--ON hrd.DepartmentID = hredh.DepartmentID
+--INNER JOIN
+--(SELECT MIN(hre.HireDate) AS Min_Hire_Date, hrd.[Name]
+--FROM HumanResources.Employee hre
+--INNER JOIN HumanResources.EmployeeDepartmentHistory hredh
+--ON hredh.BusinessEntityID = hre.BusinessEntityID
+--INNER JOIN HumanResources.Department hrd
+--ON hrd.DepartmentID = hredh.DepartmentID
+--WHERE hre.CurrentFlag = '1'
+--GROUP BY hrd.[Name]) t1
+--ON t1.Min_Hire_Date = hre.HireDate
+--AND t1.[Name] = hrd.[Name]
+--ORDER BY hrd.[Name];
+
+--3. List the first and last name and current pay rate of employees who have 
+--above average YTD sales. Sort by last name then first name
+
+--SELECT pp.FirstName, pp.LastName, hreph.Rate
+--FROM person.Person pp
+--INNER JOIN HumanResources.Employee hre
+--ON hre.BusinessEntityID = pp.BusinessEntityID
+--INNER JOIN HumanResources.EmployeePayHistory hreph
+--ON hreph.BusinessEntityID = hre.BusinessEntityID
+--INNER JOIN Sales.SalesPerson ssp
+--ON ssp.BusinessEntityID = hre.BusinessEntityID
+--WHERE ssp.SalesYTD >
+--(SELECT AVG(ssp.SalesYTD)
+--FROM Sales.SalesPerson ssp);
+
+--4. Identify the currency of the foreign country with the highest total number of orders.
+
+--SELECT sc.[Name]
+--FROM Person.CountryRegion pcr
+--INNER JOIN Sales.CountryRegionCurrency scrc
+--ON scrc.CountryRegionCode = pcr.CountryRegionCode
+--INNER JOIN Sales.Currency sc
+--ON sc.CurrencyCode = scrc.CurrencyCode
+--INNER JOIN Sales.CurrencyRate scr
+--ON scr.ToCurrencyCode = sc.CurrencyCode
+--INNER JOIN Sales.SalesOrderHeader ssoh
+--ON ssoh.CurrencyRateID = scr.CurrencyRateID
+--GROUP BY sc.[Name]
+--HAVING COUNT(*) IN
+--(SELECT MAX(t1.Num_Orders) AS Num_Orders
+--FROM
+--(SELECT sc.[Name], COUNT(*) AS Num_Orders
+--FROM Person.CountryRegion pcr
+--INNER JOIN Sales.CountryRegionCurrency scrc
+--ON scrc.CountryRegionCode = pcr.CountryRegionCode
+--INNER JOIN Sales.Currency sc
+--ON sc.CurrencyCode = scrc.CurrencyCode
+--INNER JOIN Sales.CurrencyRate scr
+--ON scr.ToCurrencyCode = sc.CurrencyCode
+--INNER JOIN Sales.SalesOrderHeader ssoh
+--ON ssoh.CurrencyRateID = scr.CurrencyRateID
+--GROUP BY sc.[Name]) t1);
+
+--5. Display the average amount of markup (unit price - standard cost) on bikes sold during June of 2011.
+
+--SELECT CAST(AVG(t1.Markup) AS DECIMAL(10,2)) AS Average_Markup
+--FROM
+--(SELECT pps.[Name], ssoh.OrderDate, ssod.UnitPrice, pp.StandardCost, (ssod.UnitPrice - pp.StandardCost) AS "Markup"
+--FROM Production.ProductCategory ppc
+--INNER JOIN Production.ProductSubcategory pps
+--ON ppc.ProductCategoryID = pps.ProductCategoryID
+--INNER JOIN Production.Product pp
+--ON pps.ProductSubcategoryID = pp.ProductSubcategoryID
+--INNER JOIN Sales.SpecialOfferProduct ssop
+--ON ssop.ProductID = pp.ProductID
+--INNER JOIN Sales.SalesOrderDetail ssod
+--ON ssod.ProductID = ssop.ProductID
+--AND ssod.SpecialOfferID = ssop.SpecialOfferID
+--INNER JOIN Sales.SalesOrderHeader ssoh
+--ON ssoh.SalesOrderID = ssod.SalesOrderID
+--WHERE ppc.[Name] = 'Bikes'
+--AND MONTH(ssoh.OrderDate) = 6
+--AND YEAR(ssoh.OrderDate) = 2011) t1;
