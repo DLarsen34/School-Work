@@ -1,0 +1,224 @@
+* {
+	box-sizing: border-box;
+}
+form{
+	font:14pt Trebuchet MS;
+	width:800px;
+	background:white;
+	position:relative;
+	left:370px;
+	padding-left:24px;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+body{
+	background-color:#ABCDEE;
+	padding-left:24px;
+	margin: 0;
+}
+h3{
+	font-family:Lucida Sans Unicode;
+}
+
+header{
+	font-family:arial;
+	width:1694px;
+	background: pink url(images/petComp.jpg) no-repeat;
+	background-size: 250px 300px;
+	height: 300px;
+	padding-left: 10px;
+	padding-top: 50px;
+	margin-left:-33px;
+	margin-top:-10px;
+	text-align:center;
+	color: black;
+	width:auto;
+}
+
+ul{
+	list-style-type:none;
+}
+nav ul, nav li {
+	margin: 0;
+	padding: 0;
+}
+
+nav ul{
+	background: pink;
+	height:32px;
+	margin-left:-23px;
+}
+
+nav li{
+	height: 30px;
+	line-height: 30px;
+	display: inline-block;
+	text-align: center;
+	width: 236px;
+}
+
+nav a{
+	text-decoration: none;
+	display: block;
+	border: 1px black solid;
+	padding-left: 24px;
+	font-family: Arial;
+	padding: 0px;
+	margin-right: -2px;
+	margin-left: -2px;
+	border-radius: 12px 12px 0px 0px;
+}
+
+
+nav a:hover{
+		background: #27B5B5;
+}
+
+nav a.current{
+	background: white;
+	cursor: default;
+}
+
+input[type=text]{
+	width: 150px;
+	padding:8px;
+	margin-top:4px;
+	background-color:pink;
+	border:1px double #aaa;
+	border-radius:4px;
+}
+
+input[type=text]:focus{
+	background:#00FFFF;
+}
+.singing{
+	margin-left:12px;
+	padding-left:12px;
+}
+
+.trick{
+	margin-left:12px;
+	padding-left:12px;
+}
+
+.div2{
+}
+
+label{
+	font-size:20px;
+	font-family:impact;
+}
+
+textarea{
+	background:pink;
+}
+
+input[type=submit]{
+	position:relative;
+	left:170px;
+	background-color:#09f;
+	height:40px;
+	width:400px;
+	color:white;
+	cursor:pointer;
+}
+ input[type=submit]:hover{
+	 background-color:#07d;
+ }
+
+.end{
+	background-color:skyblue;
+	margin-left:-26px;
+	padding-left:24px;
+	padding-right:24px;
+	margin-bottom:12px;
+}
+
+input[type=radio] + label {
+  cursor: pointer;
+}
+input[type=radio] { 
+  position: absolute; 
+  height: 1px; 
+  width: 1px;
+}
+input[type=radio] + label::before {
+  content: "\00a0";  /* Non-breaking space */
+  border-radius: 10px;
+  display: inline-block; 
+  width: 1em;  height: 1em;  
+  text-align: center;
+  line-height: 1em;
+  font-size: 0.8em; 
+  margin-right: 10px;
+  background-color: #aaa;
+  border: 0.125em solid white;
+}
+input[type=radio]:focus + label::before {
+  box-shadow: 0 0 0 1px #888;
+}
+input[type=radio]:checked + label::before {
+  content: "\2022";  /* Bullet */
+  color: white;
+  background: skyblue;
+}
+span{
+	color : #f02200;
+}
+
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #ABCDE0;
+    color: white;
+    font-size: 18px;
+	font-family:arial;
+    border: 1px black solid;
+    cursor: pointer;
+	padding: 4px;
+	margin-right: -2px;
+	margin-left: -2px;
+	border-radius: 12px 12px 0px 0px;
+	display: inline-block;
+	text-align: center;
+	width: 236px;
+
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ABCDE0;
+    min-width: 160px;
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+	border-radius: 0px 0px 0px 0px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #27B5B5;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #27B5B5;
+}
+

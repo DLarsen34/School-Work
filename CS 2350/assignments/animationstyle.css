@@ -1,0 +1,373 @@
+.scene {
+	width: width: 1200px;
+	height: 620px;
+	background: url(images/ocean.jpg) no-repeat;
+	background-size: 1650px 620px;
+	border: 8px #FFFFFF solid;
+	border-radius: 40px;
+	margin: 24px 24px 24px 24px;
+	overflow: hidden;
+	position: relative;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #4CC4C4;
+	margin: 0;
+}
+p,h1,h2,h3,h5,h6,img{
+	padding: 15px;
+}
+
+.row p,.row h1,.row h2,.row h3,.row h4,.row h5,.row h6,.row img{
+	padding: 0px;
+}
+
+p.special {
+	background-color: #27B5B5;
+	color: #000000;
+	text-align: center;
+	border: double 8px #FFFFFF;
+	width:4in;
+	padding: 12px;
+	margin: 12px;
+}
+
+p.special:hover {
+	background-color: #0BC0E0;
+	color: #FFFFFF;
+}
+h1 {
+	text-align: center;
+	padding:4px;
+	margin-left: 120px;
+	color: #FFFFFF;
+	text-shadow: -5px -5px 1px black;
+}
+
+h2 {
+	text-align: center;
+	padding: 0px;
+	margin-left: 120px;
+}
+
+h4 {
+	margin: 12px;
+}
+
+a {
+	color: #DE0000;
+}
+
+a:visited {
+	color: #0000AA;
+}
+
+td{
+	border: solid 4px #000000;
+	padding: 4px;
+}
+
+table{
+	border-collapse:collapse;
+	color: #FFFFFF;
+	margin-left: 12px;
+}
+
+ul{
+	list-style-type: circle;
+	color: #AA00AA;	
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+	width: 100%
+}
+
+/******Grid Style View******/
+@media only screen and (min-width: 100px) {
+    /* For phones: */
+    .col-p-1 {width: 8.33%;}
+    .col-p-2 {width: 16.66%;}
+    .col-p-3 {width: 25%;}
+    .col-p-4 {width: 33.33%;}
+    .col-p-5 {width: 41.66%;}
+    .col-p-6 {width: 50%;}
+    .col-p-7 {width: 58.33%;}
+    .col-p-8 {width: 66.66%;}
+    .col-p-9 {width: 75%;}
+    .col-p-10 {width: 83.33%;}
+    .col-p-11 {width: 91.66%;}
+    .col-p-12 {width: 100%;}
+	header{
+	background-size: 200px 200px;
+	height: 190px;
+	padding-left: 0px;
+	padding-top: 0px;
+	}
+}
+@media only screen and (min-width: 768px) {
+    /* For tablets: */
+    .col-m-1 {width: 8.33%;}
+    .col-m-2 {width: 16.66%;}
+    .col-m-3 {width: 25%;}
+    .col-m-4 {width: 33.33%;}
+    .col-m-5 {width: 41.66%;}
+    .col-m-6 {width: 50%;}
+    .col-m-7 {width: 58.33%;}
+    .col-m-8 {width: 66.66%;}
+    .col-m-9 {width: 75%;}
+    .col-m-10 {width: 83.33%;}
+    .col-m-11 {width: 91.66%;}
+    .col-m-12 {width: 100%;}
+	header{
+	background-size: 200px 200px;
+	height: 190px;
+	padding-left: 0px;
+	padding-top: 0px;
+}
+}
+
+@media screen and (min-width: 992px){
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+nav li{
+	display: inline-block;
+	text-align: center;
+	width: 236px;
+}
+ nav a{
+	padding: 0px;
+	margin-right: -2px;
+	margin-left: -2px;
+	border-radius: 12px 12px 0px 0px;
+}
+
+nav ul{
+	height: 32px;
+}
+
+
+header{
+	background-size: 250px 250px;
+	height: 245px;
+	padding-left: 240px;
+	padding-top: 86px;
+}
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+aside {
+	background: #FF9237;
+	text-align: center;
+	padding: 6px;
+}
+
+header{
+	background: #03AEAE url(images/weber.png) no-repeat;
+	background-size: 250px 250px;
+	height: 245px;
+	padding-left: 10px;
+	padding-top: 20px;
+	color: #FFFFFF;
+}
+
+nav ul, nav li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+nav ul{
+	background: #03AEAE;
+}
+
+nav li{
+	height: 30px;
+	line-height: 30px;
+}
+
+nav a{
+	text-decoration: none;
+	display: block;
+	border: 1px #777 solid;
+	padding-left: 24px;
+	font-family: Arial;
+}
+
+nav a:hover{
+		background: #27B5B5;
+}
+
+nav a.current{
+	background:white;
+	cursor: default;
+}
+
+#pufferfish{
+	width: 200px;
+	position: absolute;
+	top: 200px;
+	left: 600px;
+	animation: grow 10s linear;
+}
+
+@keyframes grow {
+	0% {transform: scale(1);}
+	20%{transform: scale(1.5);}
+	40%{transform: scale(2) rotateY(180deg);}
+	60%{transform: translate(-300px, 0px) rotateY(180deg) scale(1);}
+	80%{transform: translate(-400px, 0px) rotateY(180deg) scale(1);}
+	100%{transform: translate(-400px, 0px) rotateY(180deg) scale(1);}
+}
+#fish{
+	width: 100px;
+	position: absolute;
+	top: 250px;
+	left: 1100px;
+	animation: fishmove 10s linear
+}
+
+@keyframes fishmove{
+	0%{transform: translate(0px, 0px);}
+	10%{transform: translate(-100px, 0px);}
+	20%{transform: translate(-200px, 0px);}	
+	30%{transform: translate(-200px, 0px);}
+	40%{transform: translate(-200px, 0px) rotateY(180deg);}
+	50%{transform: translate(100px, 0px) rotateY(180deg);}
+	60%{transform: translate(100px, -50px) rotateY(180deg);}
+	70%{transform: translate(80px, -100px) rotateY(180deg);}
+	80%{transform: translate(120px, -150px) rotateY(180deg);}
+	90%{transform: translate(60px, -200px) rotateY(180deg);}
+	100%{transform: translate(60px, -200px) rotateY(180deg);}
+}
+#hook{
+	width: 150px;
+	position: absolute;
+	top: -150px;
+	left: 1230px;
+	animation: hookmove 10s linear;
+}
+
+@keyframes hookmove{ /*222px*/
+	0%{}
+	30%{transform: translate(0px, 350px);}
+	50%{transform: translate(0px, 350px);}
+	60%{transform: translate(0px, 300px);}
+	70%{transform: translate(-20px, 250px);}
+	80%{transform: translate(10px, 200px);}
+	90%{transform: translate(-40px, 150px);}
+	100%{transform: translate(-40px, 150px);}		
+}
+
+#bubble1{
+	width: 100px;
+	position: absolute;
+	top: 200px;
+	left: 650px;
+	animation: bubblemove1 10s linear;
+}
+
+@keyframes bubblemove1{
+	0% {transform: translate(0px, 0px) scale(0);}
+	20%{transform: translate(0px, 0px) scale(0);}
+	40%{transform: translate(0px, 0px) scale(0);}
+	60%{transform: translate(-300px, 0px) scale(1);}
+	70%{transform: translate(-300px, -100px);}
+	80%{transform: translate(-300px, -200px);}
+	90%{transform: translate(-300px, -300px);}
+	100%{transform: translate(-300px, -400px);}
+}
+
+#bubble2{
+	width: 50px;
+	position: absolute;
+	top: 275px;
+	left: 920px;
+	animation: bubblemove2 10s linear
+}
+
+@keyframes bubblemove2{
+	0% {transform: translate(0px, 0px) scale(0);}
+	20%{transform: translate(0px, 0px) scale(0);}
+	40%{transform: translate(0px, -100px) scale(1);}
+	60%{transform: translate(0px, -200px) scale(1);}
+	70%{transform: translate(0px, -300px) scale(1);}
+	80%{transform: translate(0px, -400px) scale(1);}
+	90%{transform: translate(0px, -500px); scale(1);}
+	100%{transform: translate(0px, -600px) scale(1);}
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #03AEAE;
+    color: white;
+    font-size: 18px;
+	font-family:arial;
+    border: 1px black solid;
+    cursor: pointer;
+	padding: 4px;
+	margin-right: -2px;
+	margin-left: -2px;
+	border-radius: 12px 12px 0px 0px;
+	display: inline-block;
+	text-align: center;
+	width: 236px;
+
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+	border-radius: 0px 0px 0px 0px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #27B5B5;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #27B5B5;
+}

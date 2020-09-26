@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+		<title>My portfolio Page</title>
+		<link rel="icon" type="images/png" href="images/sd1.png" />
+		<meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="This is my portfolio page">
+		<meta name="keywords" content="pets, style, forms">
+		<meta name="author" content="Dalton Larsen">
+		<link rel="stylesheet" type="text/css" href="petformstyle.css">
+		<script src="petformjava.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1>Pet Competition Form</h1>
+			<h2>Dalton Larsen</h2>
+			<h2>CS 2350</h2>
+		</header>
+		<nav>
+		<ul>
+			<li><a href="index.html">My portfolio</a> </li>
+			<li><a href="movies.html"> My favorite movies</a></li>
+			<li><a href="hobbies.html">My favorite hobbies</a></li>
+			<li><a href="animation.html">My animation page</a></li>
+			<li><div class="dropdown">
+				<button class="dropbtn">Other Webpages</button>
+				<div class="dropdown-content">
+					<a href="youthfutures.html">Youth Futures</a>
+					<a class="current" href="petform.html">Pet Form</a>
+					<a href="jsstory.html">JS Story</a>
+					<a href="calculator.html">Calculator</a>
+					</div>
+			</div></li>
+		</ul>
+		</nav>
+		<form action="http://icarus.cs.weber.edu/~linda/cs2350/submit_pet1.php" method="POST">
+		<h3>Please Enter Your Pet into one of our Competitions!</h3>
+		<label for="petName">Pet Name:</label>
+		<input type="text" name="petName" id="petName" required>
+		<br><br>
+		<h4>Which Competition will your pet be participating in?</h4>
+			<input type="checkbox" name="singsong" id="singsong">
+			<label for="singsong">Singing Pet Competition</label><br><br>
+			<div class="singing">
+			<label for="songtitle">Title of act:</label>
+			<input type="text" name="songtitle" id="songtitle"><br><br>
+			<label for="audio">Audio File of pet (mp3 or wav only).</label><br>
+			<input type="file" name="audio" id="audio"><span id="audioMsg"></span><br><br>
+			</div>
+			<br>
+		<input type="checkbox" name="cutest" id="cutest">
+		<label for="cutest">Cutest Pet Competition</label><br><br>
+			<div class="div2">
+			<label for="cutetitle">Title of act:</label>
+			<input type="text" name="cutetitle" id="cutetitle"><br>
+			<ul>
+				<li><strong>Upload a picture of your pet (jpg, png, or gif only).</strong></li>
+				<li><input type="file" name="picture1" id="picture1"><span id="cuteMsg"></span></li>
+			</ul>
+			</div>
+			<input type="checkbox" name="tricks" id="tricks">
+			<label for="tricks">Pet Tricks Competition</label><br><br>
+			<div class="trick">
+			<label for="trickTitle">Title:</label>
+			<input type="text" name="trickTitle" id="trickTitle"><br><br>
+			<select name="typeOfTrick">
+				<option value="obstacleCourse">Obstacle Course</option>
+				<option value="frisbee">Frisbee/Ball/Other Catching</option>
+				<option value="roll">Roll Over/Play Dead</option>
+				<option value="other">Other</option>
+			</select>
+			<br>
+			<br>
+				<input type="radio" name="typeOfPet" value="cat" id="cat" required><label for="cat">Cat</label><br>
+				<input type="radio" name="typeOfPet" value="dog" id="dog" required><label for="dog">Dog</label><br>
+				<input type="radio" name="typeOfPet" value="reptile" id="reptile" required><label for="reptile">Reptile</label><br>
+				<input type="radio" name="typeOfPet" value="bird" id="bird" required><label for="bird">Bird</label><br>
+				<input type="radio" name="typeOfPet" value="rodent" id="rodent" required><label for="rodent">Rodent</label><br>
+			<br>
+			</div>
+			<label for="petBirthDate">Pet's Birthdate (mm/dd/yy):</label>
+			<input type="text" name="petBirthDate" id="petBirthDate"><span id="birthMsg"></span><br><br>
+			<label for="bio">Tell us about your pet.</label><br>
+			<textarea id="bio" name="bio" placeholder="A little about my pet" rows="10" cols="50" required></textarea><br><br>
+			<label for="phoneNumber">Phone Number (xxx-xxx-xxxx).</label>
+			<input type="text" name="phoneNumber" id="phoneNumber"><span id="phoneMsg"></span><br><br>
+			<div class="end">
+			<p>To provide future access for you, please enter a username and password so that we recognize you next time</p>
+			<label for="username">Please enter your username(5-8 letters only):</label><br>
+			<input type="text" name="username" id="username" size="10"><span id="userMsg"></span><br> <br>
+			<label for="secret">Password must include 3 out of these 4 things. <br>Lowercase letter, uppercase letter,
+			number, special character from this list: ~`!@#$%^&*</label><br>
+			<input type="password" name="secret" id="secret" size="10" maxlength="8"><span id="secretMsg"></span><br><br>
+			</div>
+			<input type="submit" name="submit" value="submit" id="submit">
+			</form>
+	</body>	
+</html>
+		

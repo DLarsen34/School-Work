@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>A JS Story</title>
+		<link rel="icon" type="images/png" href="images/sd1.png" />
+		<meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="A JS Story">
+		<meta name="keywords" content="javascript, story">
+		<meta name="author" content="Dalton Larsen">
+		<link rel="stylesheet" type="text/css" href="jsstorystyle.css">
+	<script>
+		function printStory(){
+			var name = document.getElementById("name").value
+			var city = document.getElementById("city").value
+			var store = document.getElementById("store").value
+			var animal1 = document.getElementById("animal1").value
+			var verb1 = document.getElementById("verb1").value
+			var adjective1 = document.getElementById("adjective1").value
+			var adjective2 = document.getElementById("adjective2").value
+			var noun1 = document.getElementById("noun1").value
+			var noun2 = document.getElementById("noun2").value
+			var animal2 = document.getElementById("animal2").value
+			var verb2 = document.getElementById("verb2").value
+			
+			document.getElementById("myStory").innerHTML = "There once was a man named <span> " + name + "</span>, who lived in <span>" + city + "</span>. He worked at <span>" + store +
+			" </span> and loved every minute of it. On his way to work <span>" + name + "</span> came across a <span>" + animal1 + "</span> that was <span>" + verb1 + "</span>ing. <span>" + name + 
+			" </span> asked why are you doing that and the <span>" + animal1 + "</span> replied because I was cursed by a <span>" + adjective1 + "</span>, <span>" + adjective2 + 
+			" </span> witch. That's terrible <span> " + name + "</span> exclaimed. " +
+			"When <span>" + name + "</span> got to work he noticed something wasn't right. There was a smell of<span> " + noun1 + "</span> and the sky was the color of <span>" + noun2 +
+			"</span>. He then heard laughter from behind him. it was the witch. She started flying around him with the speed of a <span>" + animal2 + 
+			"</span> and shouted I'm going to curse you too. She then vanished. <span>" + name + "</span> was quite confused by what she meant. He then found himself <span>" + verb2 +
+			"</span>ing and not being able to stop. He was cursed forever as well."
+		}
+	</script>
+	</head>
+	<body>
+		<header>
+			<h1> A Story By You </h1>
+			<h2> By Dalton Larsen</h2>
+			<h2> Completed by You</h2>
+		</header>
+			<nav>
+		<ul>
+			<li><a href="index.html">My portfolio</a> </li>
+			<li><a href="movies.html"> My favorite movies</a></li>
+			<li><a href="hobbies.html">My favorite hobbies</a></li>
+			<li><a href="animation.html">My animation page</a></li>
+			<li><div class="dropdown">
+				<button class="dropbtn">Other Webpages</button>
+				<div class="dropdown-content">
+					<a href="youthfutures.html">Youth Futures</a>
+					<a href="petform.html">Pet Form</a>
+					<a class="current" href="jsstory.html">JS Story</a>
+					<a href="calculator.html">Calculator</a>
+					</div>
+			</div></li>
+		</ul>
+		</nav>
+		<section>
+		<p id="myStory"></p>
+		<p>
+			<label for="name">Enter a First Name:</label>
+			<input type="text" id="name">
+		</p>
+		<p>
+			<label for="city">Enter a City Name:</label>
+			<input type="text" id="city">
+		</p>
+		<p>
+			<label for="store">Enter a Store:</label>
+			<input type="text" id="store">
+		</p>
+		<p>
+			<label for="animal1">Enter an Animal:</label>
+			<input type="text" id="animal1">
+		</p>
+		<p>
+			<label for="verb1">Enter a Verb:</label>
+			<input type="text" id="verb1"> <strong>-ing</strong>
+		</p>
+		<p>
+			<label for="adjective1">Enter an Adjective:</label>
+			<input type="text" id="adjective1">
+		</p>
+		<p>
+			<label for="adjective2">Enter a Different Adjective:</label>
+			<input type="text" id="adjective2">
+		</p>
+		<p>
+			<label for="noun1">Enter a Noun:</label>
+			<input type="text" id="noun1">
+		</p>
+		<p>
+			<label for="noun2">Enter a Different Noun:</label>
+			<input type="text" id="noun2">
+		</p>
+		<p>
+			<label for="animal2">Enter an Animal:</label>
+			<input type="text" id="animal2">
+		</p>
+		<p>
+			<label for="verb2">Enter a verb:</label>
+			<input type="text" id="verb2"><strong>-ing</strong>
+		</p>
+		
+		<p><button onclick="printStory()">Print Story</button></p>
+		
+		<footer>
+			<h5> Created by Dalton Larsen CS 2350 Fall 2017 </h5>
+		</footer>
+		</section>
+		
+	</body>
+</html>
